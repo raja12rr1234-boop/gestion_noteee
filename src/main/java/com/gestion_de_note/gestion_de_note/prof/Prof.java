@@ -1,22 +1,14 @@
 package com.gestion_de_note.gestion_de_note.prof;
 
-
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-
-import lombok.NoArgsConstructor;
 
 @Entity
-@Data
 @Table(name = "prof")
-@NoArgsConstructor
-@AllArgsConstructor
 public class Prof {
 
     @Id
@@ -30,10 +22,60 @@ public class Prof {
     @Column(name = "spcalite")
     private String specalite;
 
-    @Column(name = "email" ,unique= true , nullable= false)
+    @Column(name = "email", unique = true, nullable = false)
     private String email;
 
-    @Column(name = "mode_pass" , nullable= false)
+    @Column(name = "mode_pass", nullable = false)
     private String password;
 
+    public Prof() {
+    }
+
+    public Prof(Integer idprof, String nom, String specalite, String email, String password) {
+        this.idprof = idprof;
+        this.nom = nom;
+        this.specalite = specalite;
+        this.email = email;
+        this.password = password;
+    }
+
+    public Integer getIdprof() {
+        return idprof;
+    }
+
+    public void setIdprof(Integer idprof) {
+        this.idprof = idprof;
+    }
+
+    public String getNom() {
+        return nom;
+    }
+
+    public void setNom(String nom) {
+        this.nom = nom;
+    }
+
+    public String getSpecalite() {
+        return specalite;
+    }
+
+    public void setSpecalite(String specalite) {
+        this.specalite = specalite;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
 }
