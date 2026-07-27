@@ -52,7 +52,7 @@ public class CustomUserDetailService implements UserDetailsService {
     public UserDetails loadUserByUsername(String email) throws UsernameNotFoundException {
 
         Optional<Prof> profOpt = profReponsitory.findByEmail(email);
-        if (profOpt.isPresent()) {
+        if (profOpt != null && profOpt.isPresent()) {
 
             Prof prof = profOpt.get();
             return User.builder()
