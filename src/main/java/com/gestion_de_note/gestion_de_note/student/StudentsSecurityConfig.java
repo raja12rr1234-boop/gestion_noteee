@@ -12,7 +12,7 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
 
-import com.gestion_de_note.gestion_de_note.prof.CustomUserDetailService;
+import com.gestion_de_note.gestion_de_note.security.CustomUserDetailService;
 
 @Configuration
 @EnableWebSecurity

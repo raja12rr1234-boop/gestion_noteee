@@ -1,4 +1,4 @@
-package com.gestion_de_note.gestion_de_note.prof;
+package com.gestion_de_note.gestion_de_note.security;
 
 import java.util.Optional;
 
@@ -9,6 +9,9 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 
 import org.springframework.stereotype.Service;
 import org.springframework.security.core.userdetails.UserDetailsService; // 1. زدنا ה-Import د Interface
+
+import com.gestion_de_note.gestion_de_note.prof.Prof;
+import com.gestion_de_note.gestion_de_note.prof.ProfReponsitory;
 import com.gestion_de_note.gestion_de_note.student.Student;
 import com.gestion_de_note.gestion_de_note.student.StudentRepository;
 

@@ -1,4 +1,4 @@
-package com.gestion_de_note.gestion_de_note.prof;
+package com.gestion_de_note.gestion_de_note.security;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
