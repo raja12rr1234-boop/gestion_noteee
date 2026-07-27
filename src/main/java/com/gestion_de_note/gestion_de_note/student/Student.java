@@ -39,7 +39,8 @@ public class Student {
     public Student() {
     }
 
-    public Student(Integer idStudent, String nom, String prenom, LocalDate date_licence, String email, String password, String num_telphone) {
+    public Student(Integer idStudent, String nom, String prenom, LocalDate date_licence, String email, String password,
+            String num_telphone) {
         this.idStudent = idStudent;
         this.nom = nom;
         this.prenom = prenom;
@@ -54,7 +55,10 @@ public class Student {
     }
 
     public void setIdStudent(Integer idStudent) {
-        this.idStudent = idStudent;
+        if (idStudent != null || !"".equals(idStudent)) {
+            this.idStudent = idStudent;
+        }
+
     }
 
     public String getNom() {
@@ -62,7 +66,9 @@ public class Student {
     }
 
     public void setNom(String nom) {
-        this.nom = nom;
+        if (nom != null) {
+            this.nom = nom;
+        }
     }
 
     public String getPrenom() {
@@ -70,7 +76,9 @@ public class Student {
     }
 
     public void setPrenom(String prenom) {
-        this.prenom = prenom;
+        if (prenom != null) {
+            this.prenom = prenom;
+        }
     }
 
     public LocalDate getDate_licence() {
@@ -78,7 +86,9 @@ public class Student {
     }
 
     public void setDate_licence(LocalDate date_licence) {
-        this.date_licence = date_licence;
+        if (date_licence != null) {
+            this.date_licence = date_licence;
+        }
     }
 
     public String getEmail() {
@@ -86,7 +96,9 @@ public class Student {
     }
 
     public void setEmail(String email) {
-        this.email = email;
+        if (email != null && !"".equals(email)) {
+            this.email = email;
+        }
     }
 
     public String getPassword() {
@@ -94,7 +106,9 @@ public class Student {
     }
 
     public void setPassword(String password) {
-        this.password = password;
+        if (password != null && !"".equals(password)) {
+            this.password = password;
+        }
     }
 
     public String getNum_telphone() {
@@ -102,6 +116,8 @@ public class Student {
     }
 
     public void setNum_telphone(String num_telphone) {
-        this.num_telphone = num_telphone;
+        if (num_telphone != null && !"".equals(num_telphone)) {
+            this.num_telphone = num_telphone;
+        }
     }
-}
+    }

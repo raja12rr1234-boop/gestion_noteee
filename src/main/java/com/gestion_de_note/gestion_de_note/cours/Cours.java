@@ -39,6 +39,4 @@ public class Cours {
     @JoinColumn(name = "id_prof")
     private Prof prof;
 
-
-
 }

@@ -44,7 +44,9 @@ public class Prof {
     }
 
     public void setIdprof(Integer idprof) {
+        if (idprof != null) {
         this.idprof = idprof;
+        }
     }
 
     public String getNom() {
@@ -52,7 +54,9 @@ public class Prof {
     }
 
     public void setNom(String nom) {
-        this.nom = nom;
+        if (nom != null) {
+            this.nom = nom;
+        }
     }
 
     public String getSpecalite() {
@@ -60,7 +64,9 @@ public class Prof {
     }
 
     public void setSpecalite(String specalite) {
-        this.specalite = specalite;
+        if (specalite != null) {
+            this.specalite = specalite;
+        }
     }
 
     public String getEmail() {
@@ -68,7 +74,9 @@ public class Prof {
     }
 
     public void setEmail(String email) {
-        this.email = email;
+        if (email != null && !"".equals(email)) {
+            this.email = email;
+        }
     }
 
     public String getPassword() {
@@ -76,6 +84,8 @@ public class Prof {
     }
 
     public void setPassword(String password) {
-        this.password = password;
+        if (password != null) {
+            this.password = password;
+        }
     }
 }
