@@ -24,6 +24,7 @@ public class CoursController {
     }
 
     @GetMapping
+    
     public List<Cours> getAllCours() {
         return coursService.getallCours();
     }
