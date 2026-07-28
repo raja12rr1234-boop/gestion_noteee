@@ -9,6 +9,7 @@ import org.springframework.security.config.Customizer; // 👈 Import الصحي
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder; // 👈 Zدنا هادي
+import org.springframework.security.config.http.SessionCreationPolicy; // 👈 زدنـا هادي
 import org.springframework.security.crypto.password.PasswordEncoder; // 👈 Zدنا هادي
 import org.springframework.security.web.SecurityFilterChain;
 
@@ -23,21 +24,21 @@ public class PROFSecurityconfig {
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
 
         http
-            .csrf(csrf -> csrf.disable())
-            .authorizeHttpRequests(auth -> auth
-                .requestMatchers(HttpMethod.GET, "/api/cours/**", "/api/module/**", "/api/notes/**")
-                .hasAnyRole("STUDENT", "PROF", "ADMIN")
+                .csrf(csrf -> csrf.disable())
+                .authorizeHttpRequests(auth -> auth
+                        .requestMatchers(HttpMethod.GET, "/api/cours/**", "/api/module/**", "/api/notes/**")
+                        .hasAnyRole("STUDENT", "PROF", "ADMIN")
 
-                .requestMatchers(HttpMethod.POST, "/api/cours/**", "/api/module/**", "/api/notes/**")
-                .hasAnyRole("PROF", "ADMIN")
+                        .requestMatchers(HttpMethod.POST, "/api/cours/**", "/api/module/**", "/api/notes/**")
+                        .hasAnyRole("PROF", "ADMIN")
 
-                .requestMatchers(HttpMethod.PUT, "/api/cours/**", "/api/module/**", "/api/notes/**")
-                .hasAnyRole("PROF", "ADMIN")
+                        .requestMatchers(HttpMethod.PUT, "/api/cours/**", "/api/module/**", "/api/notes/**")
+                        .hasAnyRole("PROF", "ADMIN")
 
-                .requestMatchers(HttpMethod.DELETE, "/api/prof/**", "/api/etudiant/**").hasRole("ADMIN")
-
-                .anyRequest().authenticated())
-            .httpBasic(Customizer.withDefaults());
+                        .requestMatchers(HttpMethod.DELETE, "/api/prof/**", "/api/etudiant/**").hasRole("ADMIN")
+                        .requestMatchers("/api/auth/**", "error").permitAll()
+                        .anyRequest().authenticated())
+                .httpBasic(Customizer.withDefaults());
 
         return http.build();
     }
@@ -45,12 +46,12 @@ public class PROFSecurityconfig {
     @Bean
     public DaoAuthenticationProvider authenticationProvider() {
         DaoAuthenticationProvider authProvider = new DaoAuthenticationProvider();
-        
+
         // 🔹 عطيناه الـ Variable customUserDetailService
-        authProvider.setUserDetailsService(customUserDetailService); 
-        
+        authProvider.setUserDetailsService(customUserDetailService);
+
         // 🔹 عطيناه passwordEncoder()
-        authProvider.setPasswordEncoder(passwordEncoder()); 
+        authProvider.setPasswordEncoder(passwordEncoder());
 
         return authProvider;
     }
