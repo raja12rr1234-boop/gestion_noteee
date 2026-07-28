@@ -1,7 +1,6 @@
 package com.gestion_de_note.gestion_de_note.student;
 
 import java.time.LocalDate;
-
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -21,11 +20,11 @@ public class Student {
     @Column(name = "nom")
     private String nom;
 
-    @Column(name = "proenom", length = 20)
+    @Column(name = "prenom", length = 20) // 👈 صلّحنا proenom
     private String prenom;
 
     @Column(name = "date_licence")
-    private LocalDate date_licence;
+    private LocalDate dateLicence; // 👈 ردينها camelCase
 
     @Column(name = "email", unique = true, nullable = false)
     private String email;
@@ -33,32 +32,32 @@ public class Student {
     @Column(name = "password")
     private String password;
 
-    @Column(name = "num_telphone", length = 20)
-    private String num_telphone;
+    @Column(name = "num_telephone", length = 20) // 👈 صلّحنا num_telephone
+    private String numTelephone;
 
+    // Default Constructor
     public Student() {
     }
 
-    public Student(Integer idStudent, String nom, String prenom, LocalDate date_licence, String email, String password,
-            String num_telphone) {
+    // All-args Constructor
+    public Student(Integer idStudent, String nom, String prenom, LocalDate dateLicence, String email, String password,
+            String numTelephone) {
         this.idStudent = idStudent;
         this.nom = nom;
         this.prenom = prenom;
-        this.date_licence = date_licence;
+        this.dateLicence = dateLicence;
         this.email = email;
         this.password = password;
-        this.num_telphone = num_telphone;
+        this.numTelephone = numTelephone;
     }
 
+    // Getters & Setters نقاب بلا معيقات
     public Integer getIdStudent() {
         return idStudent;
     }
 
     public void setIdStudent(Integer idStudent) {
-        if (idStudent != null || !"".equals(idStudent)) {
-            this.idStudent = idStudent;
-        }
-
+        this.idStudent = idStudent;
     }
 
     public String getNom() {
@@ -66,9 +65,7 @@ public class Student {
     }
 
     public void setNom(String nom) {
-        if (nom != null) {
-            this.nom = nom;
-        }
+        this.nom = nom;
     }
 
     public String getPrenom() {
@@ -76,19 +73,15 @@ public class Student {
     }
 
     public void setPrenom(String prenom) {
-        if (prenom != null) {
-            this.prenom = prenom;
-        }
+        this.prenom = prenom;
     }
 
-    public LocalDate getDate_licence() {
-        return date_licence;
+    public LocalDate getDateLicence() {
+        return dateLicence;
     }
 
-    public void setDate_licence(LocalDate date_licence) {
-        if (date_licence != null) {
-            this.date_licence = date_licence;
-        }
+    public void setDateLicence(LocalDate dateLicence) {
+        this.dateLicence = dateLicence;
     }
 
     public String getEmail() {
@@ -96,9 +89,7 @@ public class Student {
     }
 
     public void setEmail(String email) {
-        if (email != null && !"".equals(email)) {
-            this.email = email;
-        }
+        this.email = email;
     }
 
     public String getPassword() {
@@ -106,18 +97,14 @@ public class Student {
     }
 
     public void setPassword(String password) {
-        if (password != null && !"".equals(password)) {
-            this.password = password;
-        }
+        this.password = password;
     }
 
-    public String getNum_telphone() {
-        return num_telphone;
+    public String getNumTelephone() {
+        return numTelephone;
     }
 
-    public void setNum_telphone(String num_telphone) {
-        if (num_telphone != null && !"".equals(num_telphone)) {
-            this.num_telphone = num_telphone;
-        }
+    public void setNumTelephone(String numTelephone) {
+        this.numTelephone = numTelephone;
     }
-    }
+}

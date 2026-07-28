@@ -15,7 +15,7 @@ import org.springframework.security.web.SecurityFilterChain;
 
 @Configuration
 @EnableWebSecurity
-public class PROFSecurityconfig {
+public class Securityconfig {
 
     @Autowired
     private CustomUserDetailService customUserDetailService;
