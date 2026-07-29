@@ -12,7 +12,7 @@ public class StudentRequestDto {
 
     @NotBlank(message = "Le prénom est obligatoire")
     private String prenom;
-
+    @NotBlank(message = " la date de liecence est obligatiore ")
     private LocalDate dateLicence;
 
     @NotBlank(message = "L'email est obligatoire")
@@ -30,7 +30,8 @@ public class StudentRequestDto {
     }
 
     // ✅ 2. Constructor بالبرامترات (تم تصحيح الاسم لـ StudentDto)
-    public StudentRequestDto(String nom, String prenom, LocalDate dateLicence, String email, String password, String numTelephone) {
+    public StudentRequestDto(String nom, String prenom, LocalDate dateLicence, String email, String password,
+            String numTelephone) {
         this.nom = nom;
         this.prenom = prenom;
         this.dateLicence = dateLicence;
