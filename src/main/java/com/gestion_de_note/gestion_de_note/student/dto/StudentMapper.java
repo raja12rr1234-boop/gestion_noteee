@@ -1,18 +1,13 @@
 package com.gestion_de_note.gestion_de_note.student.dto;
 
 import org.mapstruct.Mapper;
-
-
 import com.gestion_de_note.gestion_de_note.student.Student;
 
-@Mapper(componentModel= "spring")
+@Mapper(componentModel = "spring")
 public interface StudentMapper {
 
-    
+    StudentResponseDto toResponseDto(Student student);
 
-
-StudentResponseDto tResponseDto(Student student);
-
-
+    Student toEntity(StudentRequestDto dto);
 
 }

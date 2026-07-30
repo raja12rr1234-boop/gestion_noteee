@@ -7,12 +7,14 @@ import jakarta.validation.constraints.Size;
 
 public class StudentRequestDto {
 
+
+       
     @NotBlank(message = "Le nom est obligatoire")
     private String nom;
 
     @NotBlank(message = "Le prénom est obligatoire")
     private String prenom;
-    @NotBlank(message = " la date de liecence est obligatiore ")
+    
     private LocalDate dateLicence;
 
     @NotBlank(message = "L'email est obligatoire")
