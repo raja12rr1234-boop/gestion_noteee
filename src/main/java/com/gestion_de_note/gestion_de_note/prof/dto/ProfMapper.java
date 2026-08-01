@@ -11,5 +11,5 @@ public interface ProfMapper {
 
   Profresponsedto toProfresponsedto(Prof prof);
 
-  Prof toentity(Profrequestdto dto);
+  Prof toEntity(Profrequestdto dto);
 }
