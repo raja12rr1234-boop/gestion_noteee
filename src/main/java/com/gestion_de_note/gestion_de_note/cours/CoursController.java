@@ -17,30 +17,5 @@ import org.springframework.web.bind.annotation.RestController;
 @CrossOrigin
 public class CoursController {
 
-    private final CoursService coursService;
-
-    public CoursController(CoursService coursService) {
-        this.coursService = coursService;
-    }
-
-    @GetMapping
     
-    public List<Cours> getAllCours() {
-        return coursService.getallCours();
-    }
-
-    @PostMapping
-    public Cours Postparid(@RequestBody Cours cours) {
-        return coursService.Postparid(cours);
-    }
-
-    @DeleteMapping("/{id_cours}")
-    public void deletebyid(@PathVariable("id_cours") Integer id_cours) {
-        coursService.deletebyid(id_cours);
-    }
-
-    @PutMapping("/{id_cours}")
-    public Cours updateCoursparid(@PathVariable("id_cours") Integer id_cours, @RequestBody Cours cours) {
-        return coursService.updateCoursparid(cours);
-    }
 }
