@@ -1,6 +1,5 @@
 package com.gestion_de_note.gestion_de_note.cours.dto;
 
-import com.gestion_de_note.gestion_de_note.prof.Prof;
 
 public record CoursRespounse(
 

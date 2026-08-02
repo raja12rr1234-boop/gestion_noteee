@@ -15,7 +15,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 @Service
 @Transactional
-public class CoursServiceImpl implements CoursService {
+public class CoursServiceImpl implements CoursService{
 
 
     @Autowired
@@ -48,7 +48,7 @@ public class CoursServiceImpl implements CoursService {
                 .orElseThrow(() -> new RuntimeException("Cours id not found: " + id_cours));
 
         // Step B: كب الداتا الجديدة د DTO فـ Entity القديمة
-        coursMapper.toupdate(dto, existing);
+        coursMapper.updateCoursFromDto(dto, existing);
 
         // Step C: حفظ فـ DB
         Cours saveCours = coursRepository.save(existing);
